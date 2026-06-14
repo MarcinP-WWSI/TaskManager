@@ -1,4 +1,5 @@
 ﻿using Avalonia;
+using Avalonia.ReactiveUI;
 using System;
 using TaskManager;
 
@@ -9,7 +10,8 @@ internal class Program
         BuildAvaloniaApp().StartWithClassicDesktopLifetime(args);
 
     public static AppBuilder BuildAvaloniaApp()
-        => AppBuilder.Configure<App>()
-            .UsePlatformDetect()
-            .LogToTrace();
+    => AppBuilder.Configure<App>()
+        .UsePlatformDetect()
+        .UseReactiveUI()
+        .LogToTrace();
 }

@@ -20,8 +20,19 @@ public class MainWindowViewModel : ReactiveObject
         set => this.RaiseAndSetIfChanged(ref _stats, value);
     }
 
-    public string NewTitle { get; set; } = string.Empty;
-    public string NewDescription { get; set; } = string.Empty;
+    private string _newTitle = string.Empty;
+    public string NewTitle
+    {
+        get => _newTitle;
+        set => this.RaiseAndSetIfChanged(ref _newTitle, value);
+    }
+
+    private string _newDescription = string.Empty;
+    public string NewDescription
+    {
+        get => _newDescription;
+        set => this.RaiseAndSetIfChanged(ref _newDescription, value);
+    }
 
     public ReactiveCommand<Unit, Unit> LoadCommand { get; }
     public ReactiveCommand<Unit, Unit> AddCommand { get; }
@@ -30,6 +41,8 @@ public class MainWindowViewModel : ReactiveObject
     {
         LoadCommand = ReactiveCommand.CreateFromTask(LoadAsync);
         AddCommand = ReactiveCommand.CreateFromTask(AddAsync);
+
+        _ = LoadAsync();
     }
 
     private async Task LoadAsync()

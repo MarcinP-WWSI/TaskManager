@@ -30,7 +30,7 @@
         </StackPanel>
 
         <ScrollViewer>
-            <ItemsControl Items="{Binding Tasks}">
+            <ItemsControl ItemsSource="{Binding Tasks}">
                 <ItemsControl.ItemTemplate>
                     <DataTemplate x:DataType="models:TodoTask">
                         <controls:TaskCard/>

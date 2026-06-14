@@ -5,11 +5,13 @@
     x:Class="TaskManager.Controls.TaskCard"
     x:DataType="models:TodoTask">
 
-    <Border Margin="4" Padding="8" CornerRadius="4" Background="#222" BorderBrush="#555" BorderThickness="1">
+    <Border Margin="4" Padding="8" CornerRadius="4" Background="#2122" BorderBrush="#555" BorderThickness="1">
         <StackPanel>
             <TextBlock Text="{Binding Title}" FontWeight="Bold"/>
             <TextBlock Text="{Binding Description}" TextWrapping="Wrap" Margin="0,4,0,0"/>
-            <CheckBox Content="Ukończone" IsChecked="{Binding IsCompleted}"/>
+            <CheckBox Content="Ukończone"
+             IsChecked="{Binding IsCompleted}"
+             IsCheckedChanged="CheckBoxChanged"/>
         </StackPanel>
     </Border>
 </UserControl>

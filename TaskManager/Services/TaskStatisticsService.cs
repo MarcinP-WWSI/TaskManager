@@ -32,7 +32,7 @@ public class TaskStatisticsService
         {
             Total = total,
             Completed = completed,
-            CompletionPercent = total == 0 ? 0 : (double)completed / total * 100
+            CompletionPercent = total == 0 ? 0 : (double)completed / total
         };
     }
 }
